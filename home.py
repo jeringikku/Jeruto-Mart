@@ -1,11 +1,27 @@
 import streamlit as st
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
+#import gspread
+#from oauth2client.service_account import ServiceAccountCredentials
 from datetime import datetime
 import requests
 from streamlit_lottie import st_lottie
 import smtplib
 from email.message import EmailMessage
+
+import streamlit as st
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+import json
+
+# Load JSON from secrets
+creds_dict = json.loads(st.secrets["general"]["GOOGLE_CREDENTIALS"])
+
+# Set scope and authorize
+scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
+client = gspread.authorize(creds)
+
+# Open your sheet
+sheet = client.open("Your Google Sheet Name").sheet1
 
 
 # --- Load Lottie Animation ---
@@ -37,8 +53,8 @@ def owner_order_notification(order_details):
 
 # --- Google Sheets setup ---
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-creds = ServiceAccountCredentials.from_json_keyfile_name("servive_account.json", scope)
-client = gspread.authorize(creds)
+#creds = ServiceAccountCredentials.from_json_keyfile_name("servive_account.json", scope)
+#client = gspread.authorize(creds)
 
 # Open the sheet by name
 sheet = client.open("JerutoMartOrders").sheet1
