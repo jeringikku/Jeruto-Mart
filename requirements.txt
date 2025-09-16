@@ -3,7 +3,7 @@ gspread
 oauth2client
 pandas
 st_lottie
-streamlit_lottie
 datetime
 smtplib
 EmailMessage
+streamlit_lottie
