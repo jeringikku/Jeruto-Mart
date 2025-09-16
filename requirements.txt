@@ -1,9 +1,5 @@
 streamlit
-streamlit-lottie
 gspread
 oauth2client
 pandas
-datetime
-smtplib
-EmailMessage
-st_lottie
+streamlit-lottie
