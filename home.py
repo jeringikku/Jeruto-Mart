@@ -267,7 +267,7 @@ products = {
         {
             "name": "Traditional Fish Pickle",
             "description": "A bold and flavorful fish pickle made with fresh, premium fish and aromatic spices. Slow-cooked to perfection, blending heat, tanginess, and the natural taste of the sea. Pairs wonderfully with plain rice, curd rice, or traditional meals for a burst of flavor. Crafted with care, free from artificial additives, delivering a homemade coastal delight.",
-            "image": "assets\Fish.jpeg",
+            "image": "assets/Fish.jpeg",
             "sizes": {"100g": 120,"250g": 300, "500g": 600, "1kg": 1200},
             "offerPrice": {"100g": 110,"250g": 275, "500g": 550, "1kg": 1100}
         },
