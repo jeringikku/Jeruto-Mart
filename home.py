@@ -274,35 +274,35 @@ products = {
         {
             "name": "Meat Pickle ( Beef )",
             "description": "A rich and hearty beef pickle crafted from premium cuts and aromatic spices. Slow-cooked to bring out deep flavors with the perfect balance of heat and tanginess. Ideal as a side dish with rice, parathas, or festive meals for an unforgettable taste. Prepared traditionally, without artificial preservatives, offering a wholesome and indulgent experience.",
-            "image": "assets\Meat.jpeg",
+            "image": "assets/Meat.jpeg",
             "sizes": {"100g": 115,"250g": 280, "500g": 560, "1kg": 1120},
             "offerPrice": {"100g": 105,"250g": 260, "500g": 510, "1kg": 1000}
         },
         {
             "name": "Lemon Pickle",
             "description": "A zesty and tangy lemon pickle made from hand-selected fresh lemons and bold spices. low cured to bring out its natural flavors, balancing sourness with a hint of spice. Perfect with rice, snacks, or curries to add a refreshing burst of flavor to every meal. Made with care using natural ingredients, without artificial preservatives, for a wholesome taste.",
-            "image": "assets\Lemon.jpeg",
+            "image": "assets/Lemon.jpeg",
             "sizes": {"250g": 80, "500g": 160, "1kg": 320},
             "offerPrice": {"250g": 70 , "500g": 140, "1kg": 280}
         },
         {
             "name": "Garlic Pickle",
             "description": "A robust and flavorful garlic pickle made with fresh garlic cloves and hand-picked spices. Slow-cooked in mustard oil to enhance its aroma and deliver the perfect balance of heat and tang. A great accompaniment to rice, parathas, and curries, adding a punch of flavor to every bite. Prepared traditionally without artificial additives, offering a healthy, homemade, and bold taste.",
-            "image": "assets\Garlic.jpeg",
+            "image": "assets/Garlic.jpeg",
             "sizes": {"100g": 70,"250g": 175, "500g": 350, "1kg": 700},
             "offerPrice": {"100g": 60,"250g": 160, "500g": 320, "1kg": 640}
         },
         {
             "name": "Lemon Dates Pickle",
             "description": "A unique blend of tangy lemons and naturally sweet dates, crafted with aromatic spices. Slow-cured to create a perfect harmony between sharp citrus and rich, fruity sweetness.  Made with care, using natural ingredients and traditional methods for a wholesome, preservative-free delight.",
-            "image": "assets\Lemon_dates.jpeg",
+            "image": "assets/Lemon_dates.jpeg",
             "sizes": {"100g": 70, "250g": 160, "500g": 320, "1kg": 640},
             "offerPrice": {"100g": 60, "250g": 145, "500g": 275, "1kg": 550}
         },
 {
             "name": "Beetroot Pickle",
             "description": "A vibrant and earthy beetroot pickle made from fresh, crisp beetroots and bold spices. Carefully crafted to bring out its natural sweetness with a tangy and mildly spiced twist. Perfect to pair with rice, sandwiches, or snacks for a burst of color and flavor in every meal. Prepared traditionally with natural ingredients, free from artificial preservatives, for a healthy and tasty delight.",
-            "image": "assets\Beetroot.jpeg",
+            "image": "assets/Beetroot.jpeg",
             "sizes": {"100g": 60, "250g": 130, "500g": 260, "1kg": 520},
             "offerPrice": {"100g": 50, "250g": 100, "500g": 200, "1kg": 400}
         },
@@ -312,7 +312,7 @@ products = {
         {
             "name": "Traditional Coconut Chutney Powder",
             "description": "A fragrant blend of dried coconut, spices, and herbs, crafted for authentic South Indian flavors. Adds a nutty, mildly spicy, and aromatic touch to snacks, dosas, idlis, and rice dishes. Easy to mix with curd or ghee for a quick and delicious accompaniment anytime. Made with natural ingredients, free from artificial preservatives, delivering homemade goodness in every bite.",
-            "image": "assets\coconut_chutney.jpeg",
+            "image": "assets/coconut_chutney.jpeg",
             "sizes": {"50g": 70, "100g": 140, "250g": 340, "500g": 650, "1kg": 1250},
             "offerPrice": {"50g": 60, "100g": 120, "250g": 280, "500g": 550, "1kg": 1100}
         },
