@@ -345,15 +345,12 @@ if st.session_state.selected_product is None:
             if st.button(f"View Details - {product['name']}", key=f"details_{product['name']}"):
                 st.session_state.selected_product = product["name"]
 
-# If product selected → show details page
+# If product selected → show detailed view (your current design)
 else:
-    selected = next(
-        (p for p in products[selected_category] if p["name"] == st.session_state.selected_product),
-        None
-    )
+    selected = next((p for p in products[selected_category] if p["name"] == st.session_state.selected_product), None)
     if selected:
         st.markdown("<div class='product-card'>", unsafe_allow_html=True)
-        cols = st.columns([1,3])
+        cols = st.columns([1, 3])
         with cols[0]:
             st.image(selected['image'], use_container_width=True)
         with cols[1]:
