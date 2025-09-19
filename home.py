@@ -324,33 +324,62 @@ products = {
 # --- Display Products ---
 st.subheader(f"🛍️ {selected_category}")
 
-for product in products[selected_category]:
-    st.markdown("<div class='product-card'>", unsafe_allow_html=True)
-    cols = st.columns([1,3])
-    with cols[0]:
-        st.image(product['image'], use_container_width=True)
-    with cols[1]:
-        st.write(f"### {product['name']}")
-        st.write(product['description'])
+# Initialize session state for product selection
+if "selected_product" not in st.session_state:
+    st.session_state.selected_product = None
 
-        size = st.selectbox("Select size", options=list(product['sizes'].keys()), key=product['name'])
-        original_price = product['sizes'][size]
-        offer_price = product.get('offerPrice', {}).get(size, None)
+# If no product selected → show grid view
+if st.session_state.selected_product is None:
+    cols = st.columns(2)  # 2-column grid
+    for i, product in enumerate(products[selected_category]):
+        with cols[i % 2]:
+            st.image(product["image"], use_container_width=True)
+            st.subheader(product["name"])
 
-        if offer_price:
-            st.markdown(f"<p><span class='offer-price'>₹{offer_price}</span> <span class='original-price'>₹{original_price}</span></p>", unsafe_allow_html=True)
-        else:
-            st.markdown(f"<p><strong>Price: ₹{original_price}</strong></p>", unsafe_allow_html=True)
+            # Show lowest price (first size) as teaser
+            first_size = list(product["sizes"].keys())[0]
+            first_price = product["offerPrice"].get(first_size, product["sizes"][first_size]) \
+                if "offerPrice" in product else product["sizes"][first_size]
+            st.write(f"Starting from ₹{first_price}")
 
-        if st.button(f"Add {product['name']} ({size}) to Cart", key=product['name'] + size):
-            st.session_state.cart.append({
-                "name": product['name'],
-                "size": size,
-                "price": offer_price if offer_price else original_price
-            })
-            st.success(f"Added {product['name']} ({size}) to cart!")
+            if st.button(f"View Details - {product['name']}", key=f"details_{product['name']}"):
+                st.session_state.selected_product = product["name"]
 
-    st.markdown("</div>", unsafe_allow_html=True)
+# If product selected → show detailed view (your current design)
+else:
+    selected = next((p for p in products[selected_category] if p["name"] == st.session_state.selected_product), None)
+    if selected:
+        st.markdown("<div class='product-card'>", unsafe_allow_html=True)
+        cols = st.columns([1, 3])
+        with cols[0]:
+            st.image(selected['image'], use_container_width=True)
+        with cols[1]:
+            st.write(f"### {selected['name']}")
+            st.write(selected['description'])
+
+            size = st.selectbox("Select size", options=list(selected['sizes'].keys()), key=selected['name'])
+            original_price = selected['sizes'][size]
+            offer_price = selected.get('offerPrice', {}).get(size, None)
+
+            if offer_price:
+                st.markdown(f"<p><span class='offer-price'>₹{offer_price}</span> "
+                            f"<span class='original-price'>₹{original_price}</span></p>", unsafe_allow_html=True)
+            else:
+                st.markdown(f"<p><strong>Price: ₹{original_price}</strong></p>", unsafe_allow_html=True)
+
+            if st.button(f"Add {selected['name']} ({size}) to Cart", key=selected['name'] + size):
+                st.session_state.cart.append({
+                    "name": selected['name'],
+                    "size": size,
+                    "price": offer_price if offer_price else original_price
+                })
+                st.success(f"Added {selected['name']} ({size}) to cart!")
+
+        st.markdown("</div>", unsafe_allow_html=True)
+
+        # Back button
+        if st.button("⬅️ Back to Products"):
+            st.session_state.selected_product = None
 
 # --- Cart Section ---
 st.markdown("---")
