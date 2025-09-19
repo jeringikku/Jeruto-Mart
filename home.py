@@ -13,7 +13,10 @@ from oauth2client.service_account import ServiceAccountCredentials
 import json
 
 # Load JSON from secrets
-creds_dict = json.loads(st.secrets["general"]["GOOGLE_CREDENTIALS"])
+#creds_dict = json.loads(st.secrets["general"]["GOOGLE_CREDENTIALS"])
+
+# Load credentials from secrets (already a dict)
+creds_dict = st.secrets["service_account"]
 
 # Set scope and authorize
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
