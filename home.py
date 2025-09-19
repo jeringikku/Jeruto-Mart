@@ -381,7 +381,7 @@ for idx, product in enumerate(products[selected_category]):
 
         # Compact text
         st.write(f"*{product['name']}*")
-        st.caption(product['description'][:80] + "...")  # Short preview for mobile
+        st.caption(product['description'][:150] + "...")  # Short preview for mobile
 
         size = st.selectbox(
             "Size",
