@@ -234,11 +234,7 @@ st.markdown("""
 
 # --- Scrolling Ads Section ---
 st.subheader("🔥 Check out our latest offers!")
-ad_images = [
-    "https://via.placeholder.com/800x300?text=New+Arrival+Pickles",
-    "https://via.placeholder.com/800x300?text=Special+Offers",
-    "https://via.placeholder.com/800x300?text=Festive+Discounts"
-]
+ad_images = ["assets/ad.jpeg"]
 placeholder = st.empty()
 prev, next = st.columns([1,1])
 with prev:
