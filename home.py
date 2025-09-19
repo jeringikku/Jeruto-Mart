@@ -212,7 +212,7 @@ st.markdown("""
     <style>
     .product-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
         gap: 12px;
     }
     .product-card {
