@@ -293,7 +293,14 @@ placeholder.image(ad_images[st.session_state.current_ad], use_container_width=Tr
 # --- Category Selection ---
 st.subheader("📂 Shop by Category")
 categories = ["Pickles", "Chutney Powders"]
-selected_category = st.radio("Choose a category:", categories, index=0, horizontal=True)
+selected_category = None
+for cat in categories:
+    if st.button(cat, key=cat, help=f"Select {cat} category"):
+        selected_category = cat
+
+# Default to first category if none clicked yet
+if selected_category is None:
+    selected_category = categories[0]
 
 # --- Product Data ---
 products = {
