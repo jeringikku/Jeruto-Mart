@@ -212,8 +212,8 @@ st.markdown("""
     <style>
     .product-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 15px;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
     }
     .product-card {
         border: 1px solid #ddd;
