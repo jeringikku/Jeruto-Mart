@@ -228,7 +228,7 @@ st.markdown("""
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
     .product-card img {
-        max-height: 80px;
+        max-height: 120px;
         object-fit: contain;
         margin-bottom: 8px;
     }
