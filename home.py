@@ -24,7 +24,7 @@ creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
 client = gspread.authorize(creds)
 
 # Open your sheet
-sheet = client.open("Your Google Sheet Name").sheet1
+sheet = client.open("JerutoMartOrders").sheet1
 
 
 # --- Load Lottie Animation ---
