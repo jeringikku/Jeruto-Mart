@@ -377,7 +377,7 @@ for idx, product in enumerate(products[selected_category]):
         st.markdown("<div class='product-card'>", unsafe_allow_html=True)
 
         # Smaller product image
-        st.image(product['image'], width=200, caption=product['name'], output_format="auto")
+        st.image(product['image'], use_container_width=True, caption=product['name'], output_format="auto")
 
         # Compact text
         st.write(f"*{product['name']}*")
