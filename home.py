@@ -221,7 +221,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- Logo and Header ---
-st.image(".\assets\logo.jpeg", width=150)
+st.image("assets/logo.jpeg", width=150)
 st.title("🍯 Welcome to Jeruto Mart")
 
 # --- Hero Section ---
