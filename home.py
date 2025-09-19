@@ -81,7 +81,7 @@ body {
 
 .category-btn {
     background-color: #ff6600;
-    color: white;
+    color: yellow;
     padding: 14px 20px;
     border-radius: 12px;
     font-size: 18px;
