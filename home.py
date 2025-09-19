@@ -260,7 +260,7 @@ products = {
         {
             "name": "Mango Pickle",
             "description": "A traditional, spicy, and tangy mango pickle made from the finest, sun-ripened mangoes. Carefully crafted with hand-picked spices for an authentic homemade taste. Perfect as a side dish with rice, parathas, or snacks to enhance every meal.",
-            "image": "assets\Mango.jpeg",
+            "image": "assets/Mango.jpeg",
             "sizes": {"100g": 45, "200g": 80, "500g": 200, "1kg": 400},
             "offerPrice": {"100g": 40, "200g": 75,"500g": 185, "1kg": 370}
         },
