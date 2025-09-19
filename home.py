@@ -164,6 +164,7 @@ button {
 </style>
 """, unsafe_allow_html=True)
 
+
 st.markdown("""
     <style>
 /* --- Header Styling --- */
@@ -206,6 +207,50 @@ st.markdown("""
 }
 </style>
 """, unsafe_allow_html=True)
+
+st.markdown("""
+    <style>
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+    }
+    .product-card {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 10px;
+        background: #fff;
+        text-align: center;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .product-card:hover {
+        transform: scale(1.02);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .product-card img {
+        max-height: 120px;
+        object-fit: contain;
+        margin-bottom: 8px;
+    }
+    .product-card h4 {
+        font-size: 1rem;
+        margin: 6px 0;
+    }
+    .offer-price {
+        color: red;
+        font-weight: bold;
+    }
+    .original-price {
+        text-decoration: line-through;
+        color: gray;
+        margin-left: 5px;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+# --- Initialize session state ---
+if "current_ad" not in st.session_state:
+    st.session_state.current_ad = 0
 
 # --- Initialize session state ---
 if "current_ad" not in st.session_state:
@@ -321,28 +366,43 @@ products = {
     ]
 }
 
-# --- Display Products ---
+# --- Display Products in Grid ---
 st.subheader(f"🛍️ {selected_category}")
 
-for product in products[selected_category]:
-    st.markdown("<div class='product-card'>", unsafe_allow_html=True)
-    cols = st.columns([1,3])
-    with cols[0]:
-        st.image(product['image'], use_container_width=True)
-    with cols[1]:
-        st.write(f"### {product['name']}")
-        st.write(product['description'])
+cols_per_row = 2  # Show 2 products per row (better for mobile)
+cols = st.columns(cols_per_row)
 
-        size = st.selectbox("Select size", options=list(product['sizes'].keys()), key=product['name'])
+for idx, product in enumerate(products[selected_category]):
+    with cols[idx % cols_per_row]:
+        st.markdown("<div class='product-card'>", unsafe_allow_html=True)
+
+        # Smaller product image
+        st.image(product['image'], use_container_width=True, caption=product['name'], output_format="auto")
+
+        # Compact text
+        st.write(f"*{product['name']}*")
+        st.caption(product['description'][:80] + "...")  # Short preview for mobile
+
+        size = st.selectbox(
+            "Size",
+            options=list(product['sizes'].keys()),
+            key=product['name'],
+            label_visibility="collapsed"  # Hide "Size" label for compactness
+        )
+
         original_price = product['sizes'][size]
         offer_price = product.get('offerPrice', {}).get(size, None)
 
         if offer_price:
-            st.markdown(f"<p><span class='offer-price'>₹{offer_price}</span> <span class='original-price'>₹{original_price}</span></p>", unsafe_allow_html=True)
+            st.markdown(
+                f"<span class='offer-price'>₹{offer_price}</span> "
+                f"<span class='original-price'>₹{original_price}</span>",
+                unsafe_allow_html=True
+            )
         else:
-            st.markdown(f"<p><strong>Price: ₹{original_price}</strong></p>", unsafe_allow_html=True)
+            st.markdown(f"*₹{original_price}*")
 
-        if st.button(f"Add {product['name']} ({size}) to Cart", key=product['name'] + size):
+        if st.button(f"Add {product['name']} ({size})", key=product['name'] + size):
             st.session_state.cart.append({
                 "name": product['name'],
                 "size": size,
@@ -350,7 +410,11 @@ for product in products[selected_category]:
             })
             st.success(f"Added {product['name']} ({size}) to cart!")
 
-    st.markdown("</div>", unsafe_allow_html=True)
+        st.markdown("</div>", unsafe_allow_html=True)
+
+    # Start new row after every "cols_per_row"
+    if (idx + 1) % cols_per_row == 0:
+        cols = st.columns(cols_per_row)
 
 # --- Cart Section ---
 st.markdown("---")
