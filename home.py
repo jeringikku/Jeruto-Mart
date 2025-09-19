@@ -98,7 +98,7 @@ body {
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 15px;
-    margin: 10px 0;
+    margin: 15px 0;
     background-color: white;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
