@@ -326,6 +326,13 @@ products = {
             "sizes": {"250g": 80, "500g": 160, "1kg": 320},
             "offerPrice": {"250g": 70 , "500g": 140, "1kg": 280}
         },
+{
+            "name": "Bitter Gourd Pickle",
+            "description": "Experience the tangy and slightly bitter goodness of our Bitter Gourd Pickle, crafted from fresh, hand-picked gourds. Perfectly spiced to tantalize your taste buds with every bite. A traditional delight that adds a punch of flavor to your meals",
+            "image": "assets/pavakka.jpeg",
+            "sizes": {"100g": 45,"250g": 100, "500g": 190, "1kg": 375},
+            "offerPrice": {"100g": 40,"250g": 85, "500g": 170, "1kg": 340}
+        },
         {
             "name": "Garlic Pickle",
             "description": "A robust and flavorful garlic pickle made with fresh garlic cloves and hand-picked spices. Slow-cooked in mustard oil to enhance its aroma and deliver the perfect balance of heat and tang. A great accompaniment to rice, parathas, and curries, adding a punch of flavor to every bite. Prepared traditionally without artificial additives, offering a healthy, homemade, and bold taste.",
