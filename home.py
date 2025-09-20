@@ -16,14 +16,14 @@ import streamlit as st
 
 st.set_page_config(
     page_title="Jeruto Mart",        # This is the app name
-    page_icon="assets/logoo.png",     # Path to your logo
+    page_icon="assets/logo.png",     # Path to your logo
     layout="centered",               # Optional: "wide" or "centered"
     initial_sidebar_state="auto"     # Optional: sidebar default state
 )
 st.markdown(
     """
-    <link rel="apple-touch-icon" href="assets/logoo.png">
-    <link rel="icon" type="image/png" href="assets/logoo.png">
+    <link rel="apple-touch-icon" href="assets/logo.png">
+    <link rel="icon" type="image/png" href="assets/logo.png">
     <meta name="apple-mobile-web-app-title" content="Jeruto Mart">
     <meta name="application-name" content="Jeruto Mart">
     <meta name="theme-color" content="#FF6600">
