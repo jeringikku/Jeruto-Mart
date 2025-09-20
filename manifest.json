@@ -1,0 +1,15 @@
+{
+  "name": "Jeruto Mart",
+  "short_name": "Jeruto",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FF6600",
+  "icons": [
+    {
+      "src": "assets/logoo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
