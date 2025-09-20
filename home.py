@@ -326,7 +326,7 @@ products = {
             "sizes": {"250g": 80, "500g": 160, "1kg": 320},
             "offerPrice": {"250g": 70 , "500g": 140, "1kg": 280}
         },
-{
+        {
             "name": "Bitter Gourd Pickle",
             "description": "Experience the tangy and slightly bitter goodness of our Bitter Gourd Pickle, crafted from fresh, hand-picked gourds. Perfectly spiced to tantalize your taste buds with every bite. A traditional delight that adds a punch of flavor to your meals",
             "image": "assets/pavakka.jpeg",
