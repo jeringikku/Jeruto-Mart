@@ -81,7 +81,7 @@ scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/au
 sheet = client.open("JerutoMartOrders").sheet1
 
 # --- Page Setup ---
-st.set_page_config(page_title="Jeruto Mart", layout="wide")
+#st.set_page_config(page_title="Jeruto Mart", layout="wide")
 
 # --- Custom CSS Styling for Mobile and Desktop ---
 st.markdown("""
